@@ -76,7 +76,6 @@ Songs
   - /songs/:id - See the details of a song (RequireUserGuard)
   - /profile - See my details and my list of songs (RequireUserGuard)
  
-
 ## Pages
 
 - 404
@@ -89,12 +88,8 @@ Songs
 ## Components
 - Login/Signup form
 - Navbar
-- Mdbooks-list
-- list-item (drop down)
-- mdNote markdown
-- mdNote Html
+- Songs-list
 - profile details
-- edit profile details
 
 ## Services
 
