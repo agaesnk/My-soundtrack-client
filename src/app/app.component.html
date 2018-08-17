@@ -1,23 +1,11 @@
-<h1>Hello</h1>
+<header id="site-header">
+  <app-navbar></app-navbar>
+</header>
 
-<router-outlet>
-<!-- <header id="site-header">
-  <div class="container"> -->
+<body>
+  <div id="site-main" class="container">
+    <router-outlet></router-outlet>
+  </div> 
+</body>
 
-    <div [ngClass]="{'is-user': user, 'is-anon': anon}">
-      <div *ngIf="loading">
-        <span class="username text">loading...</span>
-      </div>
-      <div *ngIf="!loading && !!user">
-        <a [routerLink]="['/profile']">{{user.username}}</a>
-        <a (click)="logout()">logout</a>
-      </div>
-      <div *ngIf="!loading && anon">
-        <a [routerLink]="['/login']">login</a>
-        <a [routerLink]="['/signup']">signup</a>
-      </div>
-    </div>
-
-  <!-- </div>
-</div> -->
-</router-outlet>
+<app-footer></app-footer>

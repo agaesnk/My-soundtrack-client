@@ -1,23 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './services/auth.service';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
-
-import { HttpClientModule } from '@angular/common/http';
-import { AuthService } from './services/auth.service';
-import { LoginComponent } from './components/login/login.component';
+import { InitAuthGuard } from './guards/init-auth.guard';
+import { RequireAnonGuard } from './guards/require-anon.guard';
+import { RequireUserGuard } from './guards/require-user.guard';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ProfileComponent } from './pages/profile-page/profile.component';
+import { NewRecipeComponent } from './components/new-recipe/new-recipe.component';
+import { CategoryPageComponent } from './pages/category-page/category-page.component';
+import { RecipeDetailPageComponent } from './pages/recipe-detail-page/recipe-detail-page.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { SignupFormComponent } from './components/signup-form/signup-form.component';
+import { NewRecipePageComponent } from './pages/new-recipe-page/new-recipe-page.component';
+import { CardComponent } from './components/card/card.component';
 
 const routes: Routes = [
   { path: '',  component: HomePageComponent, canActivate: [ InitAuthGuard ]},
-  { path: 'login',  component: AuthLoginPageComponent, canActivate: [ RequireAnonGuard ]},
-  { path: 'signup',  component: AuthSignupPageComponent, canActivate: [ RequireAnonGuard ] },
-  { path: 'private',  component: PrivatePageComponent, canActivate: [ RequireUserGuard ] },
-  // { path: '**' , redirect to: 'login'}
+  { path: 'login',  component: LoginPageComponent, canActivate: [ RequireAnonGuard ]},
+  { path: 'signup',  component: SignupPageComponent, canActivate: [ RequireAnonGuard ] },
+  { path: 'category',  component: CategoryPageComponent, canActivate: [ RequireUserGuard ] },
+  { path: 'recipe-detail',  component: RecipeDetailPageComponent, canActivate: [ RequireUserGuard ] },
+  { path: 'profile',  component: ProfileComponent, canActivate: [ RequireUserGuard ] },
+  { path: 'new-recipe',  component: NewRecipePageComponent, canActivate: [ RequireUserGuard ] },
+  { path: '**', component: NotFoundComponent } 
   ];
 
 
@@ -28,7 +43,17 @@ const routes: Routes = [
     LoginPageComponent,
     HomePageComponent,
     SignupPageComponent,
-    LoginComponent
+    NotFoundComponent,
+    ProfileComponent,
+    NewRecipeComponent,
+    CategoryPageComponent,
+    RecipeDetailPageComponent,
+    NavbarComponent,
+    FooterComponent,
+    LoginFormComponent,
+    SignupFormComponent,
+    NewRecipePageComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

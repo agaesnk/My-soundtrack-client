@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Subject, Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
@@ -26,7 +26,7 @@ export class AuthService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(`${this.API_URL}/me`, options)
+    return this.httpClient.get(`${this.API_URL}/auth/me`, options)
       .toPromise()
       .then((user) => this.setUser(user))
       .catch((err) => {
@@ -36,20 +36,29 @@ export class AuthService {
       });
   }
 
-  login(user: any): Promise<any> {
+  login(username: any, password: any): Promise<any> {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.post(`${this.API_URL}/login`, user, options)
+    const user = {
+      username: username,
+      password: password
+    }
+    return this.httpClient.post(`${this.API_URL}/auth/login`, user, options)
       .toPromise()
       .then((data) => this.setUser(data));
   }
 
-  signup(user: any): Promise<any> {
+  signup(username: any, email: any, password: any): Promise<any> {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.post(`${this.API_URL}/signup`, user, options)
+    const user = {
+      username: username,
+      email: email,
+      password: password
+    }
+    return this.httpClient.post(`${this.API_URL}/auth/signup`, user, options)
       .toPromise()
       .then((data) => this.setUser(data));
   }
@@ -58,7 +67,7 @@ export class AuthService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.post(`${this.API_URL}/logout`, null, options)
+    return this.httpClient.post(`${this.API_URL}/auth/logout`, null, options)
       .toPromise()
       .then(() => this.setUser());
   }

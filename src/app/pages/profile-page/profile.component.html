@@ -1,0 +1,23 @@
+<h2>Username {{ user.username }}</h2>
+<!-- <h4>Email {{ email }}</h4> -->
+
+<h3>My Recipe Book</h3>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis facilis fuga, saepe deserunt recusandae, quasi accusantium officiis repellendus dolorum id optio rem blanditiis ipsam voluptates possimus quas corrupti, labore aliquid!</p>
+<section class="mybook-container">
+  <div *ngFor="let recipe of recipes" class="mybook-card">
+    <div class="mybook-card-img">
+      <img src="{{this.imgUrl}}" class="imgrec">
+    </div>
+    <div class="mybook-card-info">
+      <p class="title">{{this.title}}</p>
+      <p class="cat">{{this.category}}</p>
+      <p class="desc">{{this.description}}</p>
+    </div>
+  </div>
+</section>
+<div class="btn-add">
+  <a href="/new-recipe">Grow My Book!</a>
+</div>
+
+<h3>My saved ones</h3>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium minus dignissimos et tempore odio consectetur molestias non nam esse quisquam cumque impedit, adipisci error nemo velit autem officiis repellat. Quam?</p>

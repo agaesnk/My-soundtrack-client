@@ -1,0 +1,65 @@
+<div class="container">
+  <h1>NEW RECIPE</h1>
+  <form>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" required [(ngModel)]="title" name="title">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" required [(ngModel)]="description" name="description">
+    </div>
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select class="form-control" id="category" required [(ngModel)]="newRecipe.category" name="category">
+        <option value>--choose one--</option>
+        <option value="creams">Creams</option>
+        <option value="desserts">Desserts</option>
+        <option value="juices and smoothies">Juices and Smoothies</option>
+        <option value="salads">Salads</option>
+        <option value="pasta">Pasta</option>
+        <option value="rice">Rice</option>
+        <option value="meat">Meat</option>
+        <option value="fish">Fish</option>
+      </select>
+    </div>
+
+    
+    <div class="form-group">
+      <label for="level">Level</label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" [(ngModel)]="level" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+        <label class="form-check-label" for="exampleRadios1">
+          Easy-Peasy
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" [(ngModel)]="level" name="exampleRadios" id="exampleRadios2" value="option2">
+        <label class="form-check-label" for="exampleRadios2">
+          Maybe you can
+        </label>
+      </div>
+      <div class="form-check disabled">
+        <input class="form-check-input" type="radio" [(ngModel)]="level" name="exampleRadios" id="exampleRadios3" value="option3">
+        <label class="form-check-label" for="exampleRadios3">
+          Just for a boss
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label for="ingredients">Ingredients</label>
+        <textarea [(ngModel)]="ingredients"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="elaboration">Step by Step</label>
+      <textarea [(ngModel)]="elaboration"></textarea>
+    </div>
+
+    <input type="file" name="fileupload" value="fileupload" id="fileupload">
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+  </form>
+</div>
