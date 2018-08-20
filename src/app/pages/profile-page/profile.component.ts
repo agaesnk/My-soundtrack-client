@@ -8,6 +8,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class ProfileComponent implements OnInit {
   user: any;
+  recipes: any;
 
   constructor(
     private authService: AuthService

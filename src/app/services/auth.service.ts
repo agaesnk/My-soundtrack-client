@@ -4,6 +4,8 @@ import { Subject, Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 
+const API_URL = environment.API_URL + '/auth';
+
 @Injectable()
 export class AuthService {
 

@@ -11,6 +11,8 @@ export class LoginFormComponent implements OnInit {
 
   username: any;
   password: any;
+  feedbackEnabled: any;
+  processing: any;
 
   constructor(
     private authService: AuthService,
