@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { RecipeService } from '../../services/recipe.service';
 
 @Component({
   selector: 'app-home-page',
@@ -7,11 +8,19 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  // category: any;
+  categories: any;
 
-  constructor() { }
+  constructor(
+    private recipeService: RecipeService,
+  ) { }
 
   ngOnInit() {
+    this.recipeService.getCategories()
+      .then(categories=>{
+        this.categories=categories;
+      })
+      .catch(err=>{
+        console.error(err);
+      })
   }
-
 }

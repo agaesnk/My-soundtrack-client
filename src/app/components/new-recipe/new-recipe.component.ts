@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { RecipeService } from '../../services/recipe.service';
+
 
 @Component({
   selector: 'app-new-recipe',
@@ -7,18 +10,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewRecipeComponent implements OnInit {
 
-  newRecipe = {
-    category: ''
-  };
+  recipes: Array<any>;
+  
   title: any;
   description: any;
+  category: any;
   level: any;
   ingredients: any;
   elaboration: any;
 
-  constructor() { }
+  constructor(
+    private recipeService: RecipeService,
+    private router: Router
+  ) { }
 
+  
   ngOnInit() {
   }
 
+  submitForm(form) {
+    console.log(form  )
+    const newRecipe = {
+      title: this.title,
+      description: this.description,
+      category: this.category,
+      level: this.level,
+      ingredients: this.ingredients,
+      elaboration: this.elaboration,
+    };
+  
+    this.recipeService.create(newRecipe)
+    .then((data) => {
+      console.log(data);
+      this.router.navigate(['/profile']);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  }
 }

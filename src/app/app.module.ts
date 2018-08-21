@@ -23,12 +23,15 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
 import { NewRecipePageComponent } from './pages/new-recipe-page/new-recipe-page.component';
 import { CardComponent } from './components/card/card.component';
+import { CardListComponent } from './components/card-list/card-list.component';
+import { ListRecipesComponent } from './pages/list-recipes/list-recipes.component';
 
 const routes: Routes = [
   { path: '',  component: HomePageComponent, canActivate: [ InitAuthGuard ]},
   { path: 'login',  component: LoginPageComponent, canActivate: [ RequireAnonGuard ]},
   { path: 'signup',  component: SignupPageComponent, canActivate: [ RequireAnonGuard ] },
-  { path: 'category',  component: CategoryPageComponent, canActivate: [ RequireUserGuard ] },
+  { path: 'recipes', component: ListRecipesComponent, canActivate: [ RequireUserGuard ] },
+  { path: ':category',  component: CategoryPageComponent, canActivate: [ RequireUserGuard ] },
   { path: 'recipe-detail',  component: RecipeDetailPageComponent, canActivate: [ RequireUserGuard ] },
   { path: 'profile',  component: ProfileComponent, canActivate: [ RequireUserGuard ] },
   { path: 'new-recipe',  component: NewRecipePageComponent, canActivate: [ RequireUserGuard ] },
@@ -53,7 +56,9 @@ const routes: Routes = [
     LoginFormComponent,
     SignupFormComponent,
     NewRecipePageComponent,
-    CardComponent
+    CardComponent,
+    CardListComponent,
+    ListRecipesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { RecipeService } from '../../services/recipe.service';
 
 @Component({
   selector: 'app-category-page',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryPageComponent implements OnInit {
 
-  constructor() { }
+recipes: any;
+
+  constructor(
+    private route: ActivatedRoute,
+    private recipeService: RecipeService,
+  ) { }
 
   ngOnInit() {
+    this.route.params.subscribe((val)=>{
+      this.recipeService.getCategory(val.category)
+      .then(recipes=>{
+        this.recipes=recipes;
+      })
+      .catch(err=>{
+        console.error(err);
+      })
+    })
   }
 
 }

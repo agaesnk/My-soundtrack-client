@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+/*LAYOUT*/
+
+/*Nav bar*/
+
+.nav-container{
+  background-color: #000000;
+  width: 100%
+}
+
+.logo {
+  font-size: 40px;
+  color:white;
+  padding-left: 20px;
+  text-decoration: none;
+}
+
+/*Footer*/
+
+.footer-container{
+  background-color: #000000;
+  width: 100%
+}
+
+/* p {
+  color: #ffffff;
+} */
+
+
+ p {
+  color: #000000;
+} 

@@ -1,5 +1,6 @@
-<!-- <div class="grid-row">
-  <div *ngFor="let category of categories">
-  <app-card [category]="category"></app-card>
+<div class="grid-row">
+  <div *ngFor="let category of categories" class="category-card">
+    <a [routerLink]="category">{{ category }}</a>
+  <!-- <app-card [category]="category"></app-card> -->
   </div>
-</div> -->
+</div>
