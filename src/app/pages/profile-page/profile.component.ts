@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { ActivatedRoute } from '@angular/router';
+import { RecipeService } from '../../services/recipe.service';
+import { validateConfig } from '@angular/router/src/config';
 
 @Component({
   selector: 'app-profile',
@@ -11,7 +14,9 @@ export class ProfileComponent implements OnInit {
   recipes: any;
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private route: ActivatedRoute,
+    private recipeService: RecipeService
   ) { }
 
   ngOnInit() {
@@ -21,6 +26,13 @@ export class ProfileComponent implements OnInit {
       console.log(user);
       this.user = user;
     });
+    this.recipeService.getAllMyRecipes()
+      .then((recipes: any) => {
+        this.recipes = recipes;
+      })
+      .catch(err=>{
+        console.error(err);
+      })
   }
 
 }

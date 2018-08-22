@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeService } from '../../services/recipe.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-detail-page',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeDetailPageComponent implements OnInit {
 
-  constructor() { }
+  recipe: any;
+  
+  constructor(
+    private recipeService: RecipeService,
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit() {
+    this.route.params.subscribe((params) => { 
+      console.log("mi id es ", params.id);
+      this.recipeService.getOneById(params.id)
+      .then((recipe: any) => {
+        this.recipe = recipe;
+      })
+      .catch((error) => {
+        
+      })
+    })
   }
 
 }

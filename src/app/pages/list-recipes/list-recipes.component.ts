@@ -14,7 +14,7 @@ export class ListRecipesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.recipeService.getAll()
+    this.recipeService.getAllByCategory('desserts')
       .then((recipes: any) => {
         this.recipes = recipes;
       })

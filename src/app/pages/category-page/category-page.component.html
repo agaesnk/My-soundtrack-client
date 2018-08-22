@@ -1,3 +1,12 @@
 <p>
   category-page works!
 </p>
+<div class="car-contain">
+  <div class="card">
+    <ul>
+        <li *ngFor="let recipe of recipes">
+          <a [routerLink]="['/recipes', recipe._id]"> {{ recipe.title }} </a>
+        </li>
+      </ul>
+  </div>
+</div>

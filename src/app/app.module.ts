@@ -31,10 +31,10 @@ const routes: Routes = [
   { path: 'login',  component: LoginPageComponent, canActivate: [ RequireAnonGuard ]},
   { path: 'signup',  component: SignupPageComponent, canActivate: [ RequireAnonGuard ] },
   { path: 'recipes', component: ListRecipesComponent, canActivate: [ RequireUserGuard ] },
-  { path: ':category',  component: CategoryPageComponent, canActivate: [ RequireUserGuard ] },
-  { path: 'recipe-detail',  component: RecipeDetailPageComponent, canActivate: [ RequireUserGuard ] },
+  { path: 'recipes/:id', component:RecipeDetailPageComponent, canActivate: [ RequireUserGuard ] },
   { path: 'profile',  component: ProfileComponent, canActivate: [ RequireUserGuard ] },
   { path: 'new-recipe',  component: NewRecipePageComponent, canActivate: [ RequireUserGuard ] },
+  { path: ':category',  component: CategoryPageComponent, canActivate: [ RequireUserGuard ] },
   { path: '**', component: NotFoundComponent } 
   ];
 

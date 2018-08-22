@@ -18,9 +18,9 @@ recipes: any;
 
   ngOnInit() {
     this.route.params.subscribe((val)=>{
-      this.recipeService.getCategory(val.category)
-      .then(recipes=>{
-        this.recipes=recipes;
+      this.recipeService.getAllByCategory(val.category)
+      .then((recipes: any) => {
+        this.recipes = recipes;
       })
       .catch(err=>{
         console.error(err);

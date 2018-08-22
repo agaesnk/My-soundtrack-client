@@ -35,6 +35,30 @@ export class RecipeService {
       .toPromise()
   }
 
+  getAllByCategory(category){
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.baseUrl}/categories/${category}`, options)
+      .toPromise()
+  }
+
+  getAllMyRecipes(){
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.baseUrl}/owner`, options)
+      .toPromise()
+  }
+
+  getOneById(id: any){
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.baseUrl}/${id}`, options)
+      .toPromise()
+  }
+
   // getList(): Promise<any> {
   //   const options = {
   //     withCredentials: true
