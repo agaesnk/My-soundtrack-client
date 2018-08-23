@@ -1,21 +1,20 @@
+<a class="logo" id= "logo-home" href="/">FoodBook</a>
 <div class="grid-row" id=main>
   <div>
-      <nav class="menu">
+      <div class="menu">
           <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
           <label class="menu-open-button" for="menu-open">
-            <span class="hamburger hamburger-1"></span>
-            <span class="hamburger hamburger-2"></span>
-            <span class="hamburger hamburger-3"></span>
+            <p class="menu-text">menu</p>
           </label>
           
-          <a href="#" class="menu-item"> <i class="fa fa-bar-chart"></i> </a>
-          <a href="#" class="menu-item"> <i class="fa fa-plus"></i> </a>
-          <a href="#" class="menu-item"> <i class="fa fa-heart"></i> </a>
-          <a href="#" class="menu-item"> <i class="fa fa-envelope"></i> </a>
-          <a href="#" class="menu-item"> <i class="fa fa-cog"></i> </a>
-          <a href="#" class="menu-item"> <i class="fa fa-ellipsis-h"></i> </a>
+          <a [routerLink]="['desserts']" class="menu-item"> desserts<i class="fa fa-bar-chart"></i> </a>
+          <a [routerLink]="['juices and smothies']" class="menu-item"> drinks<i class="fa fa-plus"></i> </a>
+          <a [routerLink]="['creams']" class="menu-item"> creams<i class="fa fa-heart"></i> </a>
+          <a [routerLink]="['salads']" class="menu-item"> salads<i class="fa fa-envelope"></i> </a>
+          <a [routerLink]="['rice']" class="menu-item"> rice<i class="fa fa-cog"></i> </a>
+          <a [routerLink]="['pasta']" class="menu-item"> pasta<i class="fa fa-ellipsis-h"></i> </a>
           
-        </nav>
+        </div>
         
         
         <!-- filters -->
@@ -39,8 +38,7 @@
             </defs>
         </svg>
   </div>
-  <div *ngFor="let category of categories" class="category-card">
+  <!-- <div *ngFor="let category of categories" class="category-card">
     <a [routerLink]="category">{{ category }}</a>
-  <!-- <app-card [category]="category"></app-card> -->
-  </div>
+  </div> -->
 </div>

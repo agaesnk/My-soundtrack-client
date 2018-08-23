@@ -1,6 +1,6 @@
 <div class="container">
-  <h1>NEW RECIPE</h1>
-  <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+  <h1>New Recipe</h1>
+  <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}" class="addform">
     <div class="form-group">
       <label for="title">Title</label>
       <input type="text" class="form-control" id="title" required [(ngModel)]="title" name="title">
@@ -19,8 +19,6 @@
         <option value="salads">Salads</option>
         <option value="pasta">Pasta</option>
         <option value="rice">Rice</option>
-        <option value="meat">Meat</option>
-        <option value="fish">Fish</option>
       </select>
     </div>
 
@@ -59,7 +57,7 @@
 
     <!-- <input type="file" name="fileupload" value="fileupload" id="fileupload"> -->
 
-    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="submit" class="btn btn-success">Create</button>
 
   </form>
 </div>

@@ -1,31 +1,32 @@
-
-<form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
-
-  <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
-    <label>Username</label>
-    <input type="text" name="username" [(ngModel)]="username" #usernameField="ngModel" required minlength="4" [disabled]="processing"/>
-    <div *ngIf="feedbackEnabled && usernameField.errors">
-      <p *ngIf="usernameField.errors.required" class="validation">username required</p>
-      <p *ngIf="usernameField.errors.minlength" class="validation">username is too short</p>
+<div class="container">
+  <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}" class="userform">
+  
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
+      <label>Username</label>
+      <input type="text" name="username" [(ngModel)]="username" #usernameField="ngModel" required minlength="4" [disabled]="processing"/>
+      <div *ngIf="feedbackEnabled && usernameField.errors">
+        <p *ngIf="usernameField.errors.required" class="validation">username required</p>
+        <p *ngIf="usernameField.errors.minlength" class="validation">username is too short</p>
+      </div>
     </div>
-  </div>
-
-  <div class="field" [ngClass]="{'has-error': feedbackEnabled && passwordField.errors}">
-    <label>Password</label>
-    <input type="text" name="password" [(ngModel)]="password" #passwordField="ngModel" required minlength="4" [disabled]="processing"/>
-    <div *ngIf="feedbackEnabled && usernameField.errors">
-      <p *ngIf="usernameField.errors.required" class="validation">password required</p>
-      <p *ngIf="usernameField.errors.minlength" class="validation">password is too short</p>
+  
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && passwordField.errors}">
+      <label>Password</label>
+      <input type="text" name="password" [(ngModel)]="password" #passwordField="ngModel" required minlength="4" [disabled]="processing"/>
+      <div *ngIf="feedbackEnabled && usernameField.errors">
+        <p *ngIf="usernameField.errors.required" class="validation">password required</p>
+        <p *ngIf="usernameField.errors.minlength" class="validation">password is too short</p>
+      </div>
     </div>
-  </div>
-
-  <div class="field submit">
-    <button type="submit" [disabled]="processing">Login</button>
-    <div *ngIf="feedbackEnabled && form.invalid">
-      <p class="validation">there are errors in the form, please review the fields</p>
+  
+    <div class="field submit">
+      <button type="submit" [disabled]="processing" class="btn-form">Login</button>
+      <div *ngIf="feedbackEnabled && form.invalid">
+        <p class="validation">there are errors in the form, please review the fields</p>
+      </div>
     </div>
-  </div>
-  <div>
-    <p>If you are not registered already, <a href="/signup">Sign up here</a></p>
-  </div>
-</form>
+    <div>
+      <p>If you are not registered already, <a href="/signup">Sign up here</a></p>
+    </div>
+  </form>
+</div>

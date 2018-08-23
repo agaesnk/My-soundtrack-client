@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: 'recipes/:id', component:RecipeDetailPageComponent, canActivate: [ RequireUserGuard ] },
   { path: 'profile',  component: ProfileComponent, canActivate: [ RequireUserGuard ] },
   { path: 'new-recipe',  component: NewRecipePageComponent, canActivate: [ RequireUserGuard ] },
-  { path: ':category',  component: CategoryPageComponent, canActivate: [ RequireUserGuard ] },
+  { path: ':category',  component: CategoryPageComponent, canActivate: [ InitAuthGuard ] },
   { path: '**', component: NotFoundComponent } 
   ];
 

@@ -19,10 +19,12 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log('navbar')
     this.authService.userChange$.subscribe((user) => {
       this.loading = false;
       this.user = user;
       this.anon = !user;
+      console.log(this.loading);
     });
   }
   logout() {

@@ -33,6 +33,29 @@ export class ProfileComponent implements OnInit {
       .catch(err=>{
         console.error(err);
       })
+    this.recipeService.recipesChange$.subscribe((recipes) => {
+      this.recipes = recipes;
+    })
   }
 
+
+  delete(id){
+    this.recipeService.delete(id)
+      .then(() => {
+        this.recipeService.getAllMyRecipes()
+        .then((recipes: any) => {
+          this.recipes = recipes;
+        })
+      })
+  }
+
+  put(id){
+    this.recipeService.put(id)
+      .then(() => {
+        this.recipeService.getAllMyRecipes()
+        .then((recipes: any) => {
+          this.recipes = recipes;
+        })
+      })
+  }
 }

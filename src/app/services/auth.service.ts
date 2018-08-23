@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject, Observable } from 'rxjs';
+import { Subject, Observable, BehaviorSubject } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 
@@ -10,7 +10,7 @@ const API_URL = environment.API_URL + '/auth';
 export class AuthService {
 
   private user: any;
-  private userChange: Subject<any> = new Subject();
+  private userChange = new BehaviorSubject<any>(1);
 
   private API_URL = environment.API_URL;
 
@@ -20,6 +20,7 @@ export class AuthService {
 
   private setUser(user?: any) {
     this.user = user;
+    console.log('fired')
     this.userChange.next(user);
     return user;
   }

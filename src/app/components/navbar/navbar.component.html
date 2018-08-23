@@ -1,17 +1,20 @@
 <div class="nav-container">
 
-  <a class="logo" href="/">FoodBook</a>
+  <div class="logo-contain">
+    <a class="logo" href="/">FoodBook</a>
+  </div>
+
 
   <div class="nav">
 
-    <div [ngClass]="{'is-user': user, 'is-anon': anon}">
+    <div class=user-options>
       
       <div *ngIf="loading">
         <span class="username text">loading...</span>
       </div>
 
       <div *ngIf="!loading && !!user">
-        <a [routerLink]="['/profile']">Hola {{user.username}}</a>
+        <a [routerLink]="['/profile']" class="user-text">Hola {{user.username}}!</a><br>
         <a (click)="logout()">logout</a>
       </div>
 

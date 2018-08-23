@@ -1,5 +1,14 @@
-
-<img src="../../../images/bizcocho-de-leche-con-pepitas-de-chocolate-11-815x458.jpg" alt="recipe photo" class="recipeimg">
-<p>
-{{recipe.title}}
-</p>
+<app-navbar></app-navbar>
+<div class="recipe-container">
+    <div class="card-img">
+      <iframe width="335" height="240" src="https://www.youtube.com/embed/UUhPCD2B_T0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <div class="card-info">
+      <h2 class="card-title">{{ recipe.title }}</h2>
+      <p class="card-desc">{{ recipe.description }}</p>
+      <p class="card-lev">Level: {{ recipe.level }}</p>
+      <p class="card-ingr">You will need...<br>{{ recipe.ingredients }}</p>
+      <p class="card-elab">Step by step <br>{{ recipe.elaboration }}</p>
+    </div>
+</div>
+<app-footer></app-footer>
