@@ -9,10 +9,12 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginFormComponent implements OnInit {
 
-  username: any;
-  password: any;
+  username: string;
+  password: string;
+  
   feedbackEnabled: any;
   processing: any;
+  error: any;
 
   constructor(
     private authService: AuthService,
@@ -23,12 +25,19 @@ export class LoginFormComponent implements OnInit {
   }
 
   submitForm(form) {
-    this.authService.login(this.username, this.password)
-    .then(() => {
-        this.router.navigate(['/']);
-    })
-    .catch(error => {
-        console.log(error);
-    });
+    this.error= '';
+    this.feedbackEnabled = true;
+    if(form.valid){
+      this.processing = true;
+      this.authService.login(this.username, this.password)
+      .then(() => {
+          this.router.navigate(['/']);
+      })
+      .catch(error => {
+          this.error = error.error;
+          this.processing = false;
+          this.feedbackEnabled = false;
+      });
+    }  
   }
 }

@@ -11,8 +11,10 @@ export class SignupFormComponent implements OnInit {
   username: any;
   email: any;
   password: any;
+
   feedbackEnabled: any;
   processing: any;
+  error: any;
   
 
   constructor(
@@ -24,12 +26,19 @@ export class SignupFormComponent implements OnInit {
   ngOnInit() {
   }
   submitForm(form) {
-    this.authService.signup(this.username, this.email, this.password)
-    .then(() => {
-        this.router.navigate(['/']);
-    })
-    .catch(error => {
-        console.log(error);
-    });
+    this.error = '';
+    this.feedbackEnabled = true;
+    if(form.valid){
+      this.processing = true;
+      this.authService.signup(this.username, this.email, this.password)
+      .then(() => {
+          this.router.navigate(['/']);
+      })
+      .catch(error => {
+          this.error = error.error;
+          this.processing = false;
+          this.feedbackEnabled = false;
+      });
+    }
   }
 }

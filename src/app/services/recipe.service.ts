@@ -71,22 +71,6 @@ export class RecipeService {
       .toPromise()
   }
 
-  // getList(): Promise<any> {
-  //   const options = {
-  //     withCredentials: true
-  //   };
-  //   return this.httpClient.get(`${this.baseUrl}`, options)
-  //     .toPromise();
-  // }
-
-  // getOneById(id: string): Promise<any> {
-  //   const options = {
-  //     withCredentials: true
-  //   };
-  //   return this.httpClient.get(`${this.baseUrl}/${id}`, options)
-  //     .toPromise();
-  // }
-
   create(data): Promise<any> {
     const options = {
       withCredentials: true

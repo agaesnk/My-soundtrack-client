@@ -3,6 +3,7 @@
 
 <ul>
   <li *ngFor="let recipe of recipes">
+      <p>{{ recipe.imgUrl }}</p>
     <a [routerLink]="[recipe._id]"> {{ recipe.title }} </a>
   </li>
 </ul>

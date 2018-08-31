@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <h1>New Recipe</h1>
   <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}" class="addform">
     <div class="form-group">
@@ -55,9 +55,9 @@
       <textarea [(ngModel)]="elaboration" name="elaboration"></textarea>
     </div>
 
-    <input type="file" name="fileupload" value="fileupload" id="fileupload">
+    <input type="file" (change)="onFileChanged($event)">
 
     <button type="submit" class="btn btn-success">Create</button>
 
   </form>
-</div>
+</div> -->

@@ -24,7 +24,6 @@ export class RecipeDetailPageComponent implements OnInit {
         this.recipe = recipe;
       })
       .catch((error) => {
-        
       })
     })
   }
