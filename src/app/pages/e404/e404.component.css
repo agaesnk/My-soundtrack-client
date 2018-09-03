@@ -1,0 +1,30 @@
+.e-container {
+  margin: 18% auto;
+  width: 768px;
+  text-align: center;
+}
+
+.h1-ep {
+  font-family: 'Fredericka the Great', cursive;
+  color: #555;
+  font-size: 2em;
+  font-weight: 400;
+}
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+span {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 7em;
+}
+
+@media only screen and (max-width: 768px) {
+  body, p {
+      width: 95%;
+  }
+  .h1-ep {
+      font-size: 1.5em;
+      margin: 0 0 0.3em;
+  }
+}

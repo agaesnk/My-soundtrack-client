@@ -1,19 +1,17 @@
 <app-navbar></app-navbar>
-<!-- <h4>Email {{ email }}</h4> -->
 <div class="container">
   <h2>{{ user.username }}'s Book</h2>
   <ul class="mybook-container">
-    <li *ngFor="let recipe of recipes" class="card">
+    <li *ngFor="let recipe of recipes" class="prof-card">
       <div class="card-img">
         <img src="{{recipe.photo}}" class="imgrec">
       </div>
       <div class="card-inform">
-        <p class="title">{{recipe.title}}</p>
-        <p class="desc">{{recipe.description}}</p>
+        <a [routerLink]="['/recipes', recipe._id]" class="title"> {{ recipe.title }} </a>
       </div>
       <div class="button-options">
-        <button (click)="put(recipe._id)" class="editbutton">Edit</button>
-        <button (click)="delete(recipe._id)" class="delbutton">Delete</button>
+          <a [routerLink]="['/edit-recipe', recipe._id]" class="prof-buttons" id="editbutton">Edit</a>
+        <button (click)="delete(recipe._id)" class="prof-buttons" id="delbutton">Delete</button>
       </div>
     </li>
   </ul>

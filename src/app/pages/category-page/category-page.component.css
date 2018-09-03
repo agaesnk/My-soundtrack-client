@@ -1,0 +1,28 @@
+.cards-contain{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: -12px;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  height: 225px;
+  width: 170px;
+  padding: 8px;
+  font-size: 20px;
+  background-color:rgba(255, 255, 255, 0.3);
+  list-style: none;
+  margin-right: 15px;
+  margin-top: 15px;
+  text-decoration: none;
+}
+
+.card-title{
+  text-decoration: none;
+  font-family: 'Lobster';
+  font-size: 25px;
+}

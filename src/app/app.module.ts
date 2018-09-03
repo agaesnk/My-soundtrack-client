@@ -35,6 +35,7 @@ import { ListRecipesComponent } from './pages/list-recipes/list-recipes.componen
 import { InitAuthGuard } from './guards/init-auth.guard';
 import { RequireAnonGuard } from './guards/require-anon.guard';
 import { RequireUserGuard } from './guards/require-user.guard';
+import { EditRecipeComponent } from './pages/edit-recipe/edit-recipe.component';
 
 
 const routes: Routes = [
@@ -45,6 +46,7 @@ const routes: Routes = [
   { path: 'recipes/:id', component:RecipeDetailPageComponent, canActivate: [ RequireUserGuard ] },
   { path: 'profile',  component: ProfileComponent, canActivate: [ RequireUserGuard ] },
   { path: 'new-recipe',  component: NewRecipePageComponent, canActivate: [ RequireUserGuard ] },
+  { path: 'edit-recipe',  component: EditRecipeComponent, canActivate: [ RequireUserGuard ] },
   { path: ':category',  component: CategoryPageComponent, canActivate: [ InitAuthGuard ] },
   { path: '**', component: E404Component } 
   ];
@@ -69,7 +71,8 @@ const routes: Routes = [
     CardComponent,
     CardListComponent,
     ListRecipesComponent,
-    E404Component
+    E404Component,
+    EditRecipeComponent
   ],
   imports: [
     BrowserModule,
