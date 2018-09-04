@@ -1,6 +1,8 @@
 .grid-row{
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 #main{
@@ -10,13 +12,17 @@
 }
 
 .log-home{
-top: 30%;
-left: 50%;
-transform: translate(-50%, -70%);
-font-family: 'Lobster', cursive;
-font-size: 68px;
-color: #ffffff;
-text-decoration: none;
+  width: 100%;
+  margin-top: 33%;
+  font-family: 'Lobster', cursive;
+  font-size: 78px;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+}
+
+svg{
+  align-self: flex-end;
 }
 
 .menu-open-button:hover {
@@ -36,8 +42,8 @@ cursor: pointer;
 .menu-item, .menu-open-button {
 background-color: #ffffff;
 border-radius: 100%;
-width: 80px;
-height: 80px;
+width: 88px;
+height: 88px;
 margin-left: -40px;
 left: 50%;
 position: absolute;

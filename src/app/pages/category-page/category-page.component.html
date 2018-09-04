@@ -3,7 +3,7 @@
     <ul class="cards-contain">
         <li *ngFor="let recipe of recipes"  class="card">
           <div class="card-img">
-            <img src="{{ recipe.imgUrl }}" class="imgrec">
+            <img src="{{ recipe.photo }}" class="imgrec">
           </div>
           <div class="card-inform">
             <a [routerLink]="['/recipes', recipe._id]" class="card-title"> {{ recipe.title }} </a>

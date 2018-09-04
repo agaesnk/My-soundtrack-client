@@ -8,6 +8,10 @@
   padding-top: 10px;
 }
 
+.logo-contain{
+  width: 55%;
+}
+
 .logo {
   font-size: 45px;
   color:#ffffff;
@@ -18,17 +22,31 @@
 }
 
 .user-options{
-  color:#ffffff;
-  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
   line-height: 27px;
   text-decoration: none;
-  font-family: 'Lobster', cursive;
   text-align: right;
   padding-right: 20px;
-  align-content: center;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.user-options a{
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Lobster', cursive;
+  font-size: 20px;
+  width: 42%;
 }
 
 .user-text{
   text-decoration: none;
   color: #ffffff;
+}
+
+.options{
+  display: flex;
+  justify-content: space-between;
 }

@@ -1,7 +1,8 @@
 <app-navbar></app-navbar>
 <div class="recipe-container">
-    <div class="card-img">
-        <img class="card-img-top" src="{{ recipe.photo }}">
+  <div class="recipe-card">
+    <div class="card-img-top">
+        <img class="img-top" src="{{ recipe.photo }}">
       <!-- <iframe width="372" height="240" src="https://www.youtube.com/embed/UUhPCD2B_T0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
     </div>
     <div class="card-info">
@@ -11,5 +12,6 @@
       <p class="card-ingr">You will need...<br>{{ recipe.ingredients }}</p>
       <p class="card-elab">Step by step <br>{{ recipe.elaboration }}</p>
     </div>
+  </div>
 </div>
 <app-footer></app-footer>

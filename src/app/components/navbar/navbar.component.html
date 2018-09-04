@@ -4,27 +4,18 @@
     <a class="logo" href="/">FoodBook</a>
   </div>
 
-
-  <div class="nav">
-
-    <div class=user-options>
-      
-      <div *ngIf="loading">
-        <span class="username text">loading...</span>
-      </div>
-
-      <div *ngIf="!loading && !!user">
-        <a [routerLink]="['/profile']" class="user-text">Hola {{user.username}}!</a><br>
-        <a (click)="logout()">logout</a>
-      </div>
-
-      <div *ngIf="!loading && anon">
-        <a [routerLink]="['/login']">login</a>
-        <a [routerLink]="['/signup']">signup</a>
-      </div>
-
+  <div class=user-options>
+    
+    <div *ngIf="loading">
+      <span class="username text">loading...</span>
     </div>
-
+    <div *ngIf="!loading && !!user">
+      <a [routerLink]="['/profile']" class="user-text">Hola {{user.username}}!</a><br>
+      <a (click)="logout()">logout</a>
+    </div>
+    <div *ngIf="!loading && anon" class="options">
+      <a [routerLink]="['/login']">login</a>
+      <a [routerLink]="['/signup']">signup</a>
+    </div>
   </div>
-
 </div>
